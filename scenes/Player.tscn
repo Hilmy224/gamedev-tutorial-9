@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://beg452kqkfydx"]
+[gd_scene load_steps=11 format=3 uid="uid://beg452kqkfydx"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://d2oej36eq8vvl" path="res://Assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d2oej36eq8vvl" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="2"]
+[ext_resource type="Material" uid="uid://dn4ade4kj8ogd" path="res://Scenes/rain.tres" id="3_2bwdh"]
+[ext_resource type="Texture2D" uid="uid://dpnuijhsx0eak" path="res://assets/kenney_platformerpack/PNG/Particles/brickGrey_small.png" id="3_u0ryb"]
+[ext_resource type="Material" uid="uid://vqudreeknequ" path="res://Scenes/player_trail.tres" id="4_600io"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(52.924, 76.884)
@@ -80,3 +83,19 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(620, -296)
+amount = 100
+process_material = ExtResource("3_2bwdh")
+lifetime = 4.0
+visibility_rect = Rect2(-100, -100, 2000, 700)
+trail_enabled = true
+trail_sections = 7
+
+[node name="TrailParticle" type="GPUParticles2D" parent="."]
+position = Vector2(0, 30)
+amount = 4
+process_material = ExtResource("4_600io")
+texture = ExtResource("3_u0ryb")
+lifetime = 0.5

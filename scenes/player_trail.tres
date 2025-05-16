@@ -1,0 +1,11 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://vqudreeknequ"]
+
+[resource]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(30, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -200, 0)

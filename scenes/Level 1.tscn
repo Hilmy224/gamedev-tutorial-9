@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3a2sgehaqjdt"]
 
-[ext_resource type="PackedScene" uid="uid://beg452kqkfydx" path="res://Scenes/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://beg452kqkfydx" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cbrrsfnbg3p0g" path="res://scenes/Spawner.tscn" id="1_yaxqa"]
-[ext_resource type="Texture2D" uid="uid://r37ts0nyebjk" path="res://Assets/Familiar Looking Rocket.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://r37ts0nyebjk" path="res://assets/Familiar Looking Rocket.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://dd7fcijo64bic" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="4_8s0ta"]
 [ext_resource type="PackedScene" path="res://scenes/Area Trigger.tscn" id="4_t7cob"]
 
@@ -45,16 +45,15 @@ sources/0 = SubResource("TileSetAtlasSource_we7op")
 [node name="Level 1" type="Node2D"]
 
 [node name="Spawner" parent="." instance=ExtResource("1_yaxqa")]
-position = Vector2(734, 90)
+position = Vector2(1700, 280)
+spawn_rate = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2170.27, 73.2836)
 texture = ExtResource("3")
 
 [node name="Area3D Trigger" parent="Sprite2D" instance=ExtResource("4_t7cob")]
-
-[node name="Area3D Trigger2" parent="." instance=ExtResource("4_t7cob")]
-position = Vector2(2170.27, 73.2836)
+sceneName = "Win Screen"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5i4ah")
